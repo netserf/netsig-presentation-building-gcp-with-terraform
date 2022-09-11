@@ -1,12 +1,13 @@
-# NetSIG Presentation - [Presentation Title]
+# NetSIG Presentation - Building GCP with Terraform
 
-[![Actions Status](https://github.com/netserf/template-presentation-repo/workflows/Markdown%20Lint/badge.svg)](https://github.com/netserf/template-presentation-repo/actions)
-[![Actions Status](https://github.com/netserf/template-presentation-repo/workflows/Markdown%20Links/badge.svg)](https://github.com/netserf/template-presentation-repo/actions)
+[![Actions Status](https://github.com/netserf/template-presentation-repo/workflows/Docs/badge.svg)](https://github.com/netserf/template-presentation-repo/actions)
 
 ## Presentation Summary
 
-In this session we'll look at ...
-Topics will include ...
+In this session we'll explore Infrastructure as Code (IaC) using Terraform to
+build a Google Cloud environment. We'll cover Terraform basics, then dive into
+some demo deployments to show how Terraform can be used to define and manage
+your infrastructure.
 
 ## Presentation Slides
 

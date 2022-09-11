@@ -1,0 +1,14 @@
+name: Docs
+
+on: [push, pull_request]
+
+jobs:
+  markdown-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3.0.2
+      - name: Check that markdown links are valid
+        uses: gaurav-nelson/github-action-markdown-link-check@1.0.13
+      - name: Run mdl to check for markdown lint
+        uses: actionshub/markdownlint@2.0.2
