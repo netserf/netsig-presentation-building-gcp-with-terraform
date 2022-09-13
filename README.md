@@ -27,7 +27,7 @@ These presentations are currently hosted online.
 
 ## Where can I find the cheatsheet for this presentation?
 
-* [Template Cheat Sheet](template-cheat-sheet.txt)
+* [Terraform Cheat Sheet](terraform-cheat-sheet.txt)
 
 ## Contributing
 

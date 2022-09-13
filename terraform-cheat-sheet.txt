@@ -1,0 +1,26 @@
+# Cheat Sheet for NetSIG presentation - Building GCP with Terraform
+# For more details:
+# https://github.com/netserf/netsig-presentation-building-gcp-with-terraform
+
+# Terraform installation instructions
+# See https://learn.hashicorp.com/tutorials/terraform/install-cli
+
+# Clone the repo if you'd like to follow along:
+git clone https://github.com/netserf/netsig-presentation-building-gcp-with-terraform.git
+cd netsig-presentation-building-gcp-with-terraform
+
+# Example 1 - Terraform Hello World example
+
+# initialize & build "infrastructure"
+cd terraform/hello
+cat main.tf
+terraform init
+terraform plan
+terraform apply
+
+# update main.tf - permissions to 0644
+terraform plan
+terraform apply
+
+# delete "infrastructure"
+terraform destroy
