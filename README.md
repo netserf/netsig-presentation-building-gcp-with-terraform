@@ -1,6 +1,9 @@
 # NetSIG Presentation - Building GCP with Terraform
 
+<!-- markdown-link-check-disable -->
 [![Actions Status](https://github.com/netserf/template-presentation-repo/workflows/Docs/badge.svg)](https://github.com/netserf/template-presentation-repo/actions)
+[![Actions Status](https://github.com/netserf/template-presentation-repo/workflows/Terraform%20Lint/badge.svg)](https://github.com/netserf/template-presentation-repo/actions)
+<!-- markdown-link-check-enable -->
 
 ## Presentation Summary
 
