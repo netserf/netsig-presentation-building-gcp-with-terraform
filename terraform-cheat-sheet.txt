@@ -5,7 +5,9 @@
 # Terraform installation instructions
 # See https://learn.hashicorp.com/tutorials/terraform/install-cli
 
-# Clone the repo if you'd like to follow along:
+# If you'd like to follow along, log into GCP Console and open Cloud Shell
+# Run the following commands:
+
 git clone https://github.com/netserf/netsig-presentation-building-gcp-with-terraform.git
 cd netsig-presentation-building-gcp-with-terraform
 
@@ -24,3 +26,48 @@ terraform apply
 
 # delete "infrastructure"
 terraform destroy
+
+
+# Example 2 - Terraform GCP example
+cd terraform/gcp
+
+# initialize provider
+cp components/provider.tf .
+terraform init
+terraform providers
+ls -la
+cat .terraform.lock.hcl
+
+# build VPC network
+cp components/vpc.tf .
+terraform plan
+terraform apply
+
+# see GCP Console > VPC network
+
+# build GCE VMs
+cp -r components/* .
+terraform init
+terraform plan
+terraform apply
+
+# see GCP Console > Compute Engine
+
+# check access
+gcloud compute ssh my-columbus-vm --zone=us-east5-b
+gcloud compute ssh my-oregon-vm --zone=us-west1-a
+gcloud compute ssh my-belgium-vm --zone=europe-west1-b
+
+# delete "infrastructure"
+terraform destroy
+
+# see GCP Console > Compute Engine
+
+# rebuild once more
+terraform apply -auto-approve
+
+# check the infrastructure
+gcloud compute instances list
+
+# delete "infrastructure" once more
+terraform destroy -auto-approve
