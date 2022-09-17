@@ -48,26 +48,44 @@ terraform apply
 # build GCE VMs
 cp -r components/* .
 terraform init
+terraform providers
 terraform plan
-terraform apply
+terraform apply -auto-approve
 
 # see GCP Console > Compute Engine
+
+# list GCE VMs
+gcloud compute instances list
 
 # check access
 gcloud compute ssh my-columbus-vm --zone=us-east5-b
 gcloud compute ssh my-oregon-vm --zone=us-west1-a
 gcloud compute ssh my-belgium-vm --zone=europe-west1-b
+    # try: 
+    # ping <private ip of other hosts>
+    # sudo apt install traceroute nmap
+    # traceroute <private ip of other hosts>
+    # nmap <private ip of other hosts>
 
-# delete "infrastructure"
+# delete "infrastructure" and check terraform state
 terraform destroy
+cat terraform.tfstate
+terraform show
+gcloud compute instances list
 
 # see GCP Console > Compute Engine
 
 # rebuild once more
 terraform apply -auto-approve
 
-# check the infrastructure
+# check the infrastructure and terraform state
 gcloud compute instances list
+terraform show
+cat terraform.tfstate
 
-# delete "infrastructure" once more
+# delete "infrastructure" once more and check state
 terraform destroy -auto-approve
+gcloud compute instances list
+terraform show
+cat terraform.tfstate
+
