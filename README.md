@@ -14,7 +14,7 @@ your infrastructure.
 
 ## Presentation Slides
 
-* [Presentation Title](dummy-slides.txt)
+* [NetSIG - Building GCP with Terraform](netsig-building-gcp-with-terraform.pdf)
 
 ## Who is NetSIG?
 
