@@ -17,12 +17,12 @@ jobs:
         run: tflint --init
       - name: Run tflint lint check
         run: tflint -f compact
-      - name: Run validation on terraform example #1
+      - name: Run validation on terraform example 1
         run: |
           cd $GITHUB_WORKSPACE/terraform/hello
           terraform init
           terraform validate
-      - name: Run validation on terraform example #2
+      - name: Run validation on terraform example 2
         run: |
           cd $GITHUB_WORKSPACE/terraform/gcp/components
           terraform init
