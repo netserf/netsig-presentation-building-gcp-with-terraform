@@ -10,29 +10,44 @@
 
 git clone https://github.com/netserf/netsig-presentation-building-gcp-with-terraform.git
 cd netsig-presentation-building-gcp-with-terraform
+WORKDIR=$(pwd)
 
 # Example 1 - Terraform Hello World example
 
 # initialize & build "infrastructure"
-cd terraform/hello
+cd $WORKDIR/terraform/hello
 cat main.tf
 terraform init
 terraform plan
 terraform apply
 
+# check the state file and the "resource"
+terraform state list
+terraform state show local_file.hello
+cat /tmp/hello.txt
+ll /tmp/hello.txt
+
 # update main.tf - permissions to 0644
 terraform plan
 terraform apply
+
+# check the state file and the "resource" again
+terraform state list
+terraform state show local_file.hello
+cat /tmp/hello.txt
+ll /tmp/hello.txt
 
 # delete "infrastructure"
 terraform destroy
 
 
 # Example 2 - Terraform GCP example
-cd terraform/gcp
+
+cd $WORKDIR/terraform/gcp
 
 # initialize provider
 cp components/provider.tf .
+cat provider.tf
 terraform init
 terraform providers
 ls -la
@@ -40,6 +55,7 @@ cat .terraform.lock.hcl
 
 # build VPC network
 cp components/vpc.tf .
+cat vpc.tf
 terraform plan
 terraform apply
 
@@ -47,6 +63,9 @@ terraform apply
 
 # build GCE VMs
 cp -r components/* .
+cat resources.tf
+cat gce_instance/variables.tf
+cat gce_instance/main.tf
 terraform init
 terraform providers
 terraform plan
@@ -56,6 +75,7 @@ terraform apply -auto-approve
 
 # list GCE VMs
 gcloud compute instances list
+gcloud compute instances describe my-oregon-vm --zone=us-west1-a
 
 # check access
 gcloud compute ssh my-columbus-vm --zone=us-east5-b
