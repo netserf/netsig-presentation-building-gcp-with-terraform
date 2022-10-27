@@ -95,17 +95,3 @@ gcloud compute instances list
 
 # see GCP Console > Compute Engine
 
-# rebuild once more
-terraform apply -auto-approve
-
-# check the infrastructure and terraform state
-gcloud compute instances list
-terraform show
-cat terraform.tfstate
-
-# delete "infrastructure" once more and check state
-terraform destroy -auto-approve
-gcloud compute instances list
-terraform show
-cat terraform.tfstate
-
